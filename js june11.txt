@@ -1,0 +1,68 @@
+1.What is the value of typeof typeof true?
+
+The expression 'typeof true' evaluates to boolean, as `true` is a boolean value.
+
+So, typeof typeof true would be 'string', because 'typeof' is an operator that returns a string representing the type of the operand. Therefore, it returns the string 'string'` in this case because the result of the inner 'typeof true' expression is 'boolean', which is itself a string.
+
+
+2. What is the result of null == undefined?
+
+The result of `null == undefined` is `true` because in JavaScript, when you use the double equals (`==`) for comparison, `null` is loosely equal to `undefined`. In other words, JavaScript treats them as equivalent when using the double equals operator.
+
+
+3. What is the value of +''?
+
+The value of `+''` is 0.
+
+Here's why:
+
+1. '' is an empty string.
+2. The unary plus operator (`+`) before the empty string tries to convert the empty string to a number.
+3. An empty string (`''`) when coerced to a number becomes 0.
+4. So, the value of `+''` is `0`.
+
+
+4. What is the result of [] == false?
+
+[] == false: This expression returns true. In JavaScript, an empty array [] when coerced to a boolean becomes true, but when comparing it with false using loose equality (==), JavaScript coerces false to a number, which is 0, and then an empty array, when coerced to a number, also becomes 0. So, 0 == 0 evaluates to true.
+
+
+5. What is the value of {} + {}?
+
+{} is treated as an empty block in this case because it's followed by +{}. So, +{} is attempting to convert an empty block to a number, which results in NaN (Not a Number). Therefore, the value of {} + {} is NaN.
+
+
+6. What is the value of typeof 42n?
+
+typeof 42n: The typeof operator returns a string indicating the type of the operand. 42n represents a BigInt value, so the result of typeof 42n is "bigint".
+
+
+7. What is the result of "" == false?
+
+"" == false: This expression returns true. In JavaScript, when comparing a string with a boolean using loose equality (==), the boolean value false gets coerced into a number, which is 0, and an empty string also coerces into 0, so 0 == 0 evaluates to true.
+
+
+
+8. What is the value of Boolean("0")?
+
+Boolean("0"): This expression returns true. In JavaScript, any non-empty string when converted to a boolean evaluates to true, regardless of its content.
+
+
+9. What is the result of [] === []?
+
+[] === []: This expression returns false. In JavaScript, arrays are compared by reference, not by value. So, even though both arrays are empty, they are distinct objects in memory, and === checks for strict equality, which includes both value and type. Since these are two separate arrays in memory, they are not strictly equal.
+
+10. What is the value of typeof Infinity?
+
+typeof Infinity: This returns "number". In JavaScript, Infinity is considered a numeric value, so typeof Infinity returns "number".
+
+
+11 What is the result of {} === {}?
+
+{} === {}: This expression returns false. Similar to the case with arrays, objects are compared by reference, not by value. So, even though both objects are empty, they are distinct objects in memory, and === checks for strict equality, which includes both value and type. Since these are two separate objects in memory, they are not strictly equal
+
+
+12. What is the value of typeof NaN?
+
+typeof NaN: This returns "number". Despite being a special value representing "Not a Number", NaN is still considered a numeric value in JavaScript, hence typeof NaN returns "number".
+

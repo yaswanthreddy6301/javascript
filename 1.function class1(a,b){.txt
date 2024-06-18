@@ -1,0 +1,70 @@
+ 1.function class1(a,b){
+   console.log(a+b);
+   console.log(a-b);
+   console.log(a*b);
+   console.log(a/b);
+   return a,b;
+   }
+   class1(5,6);
+
+output:-
+
+11
+
+-1
+
+0.8333333333333334
+
+30
+
+
+function class1(a,b){
+    return a+b;
+}
+console.log(class1(8,4))
+
+output:12
+
+function class1(a,b){
+    return a-b;
+}
+console.log(class1(8,4))
+
+output:4
+
+function class1(a,b){
+    return a*b;
+}
+console.log(class1(8,4))
+
+output:32
+
+function class1(a,b){
+    return a/b;
+}
+console.log(class1(8,4))
+
+output:2
+
+function class1(a,b){
+return a>b?a:b
+}
+console.log(class1(8,4))
+
+output: 8
+
+
+function class1(a,b){
+    return a**3;
+}
+console.log(class1(7))
+
+output:343
+
+function class1(a,r,y){
+    return (a*r*y)/100;
+}
+console.log(class1(200,4,2))
+
+output:16
+
