@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .div1>img{
+        height: 100px;
+        width: 100px;
+
+    }
+    .div{
+        display: flex;
+        
+    }
+    .div2{
+        height: 510px;
+        width: 500px;
+        border: 3px solid black;
+    }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <div class="div1">
+            <img  onmouseover="fn1('./javascript/jstask/1.jpg')" src="./javascript/jstask/1.jpg">
+            <br>
+            <img onmouseover="fn1('./javascript/jstask/2.jpg')" src="./javascript/jstask/2.jpg">
+            <br>
+            <img onmouseover="fn1('./javascript/jstask/3.jpg')"src="./javascript/jstask/3.jpg">
+            <br>
+            <img onmouseover="fn1('./javascript/jstask/4.jpg')" src="./javascript/jstask/4.jpg">
+            <br>
+            <img onmouseover="fn1('./javascript/jstask/5.jpg')"src="./javascript/jstask/5.jpg">
+        </div>
+        <div>
+            <img src="./javascript/jstask/1.jpg" class="div2">
+        </div>
+    </div>
+    <script>
+        var a=document.getElementsByClassName("div2")[0];
+        function fn1(k){
+            a.src=k
+
+        }
+       
+
+    </script>
+</body>
+</html>
