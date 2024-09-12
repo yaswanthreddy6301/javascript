@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .yash {
+        max-height: 280px;
+        width: 350px;
+        border-width: 8px;
+        border: 8px solid green;
+       background-color: beige;
+        margin: auto;
+      }
+      .yashu {
+        margin: auto;
+        text-align: center;
+      }
+      fieldset{
+        width: 400px;
+        margin: auto;
+        border-width: 8px;
+      }
+      #div{
+        border: 2px solid;
+        width: 200px;
+      }
+      #Submit{
+       display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>user details</legend>
+        <div class="yash">
+          <center><h3>Registration form</h3></center>
+          
+          <label for="full name">Full name:-</label>  &emsp; &emsp; 
+          <input
+            type="full name"
+            id="full name"
+            placeholder="full name"
+            name="full name"
+          /><br /><br />
+          <label for="username">Gmail:-</label> &emsp; &emsp; &ensp; &ensp;
+          <input
+            type="email"
+            id="username"
+            placeholder="username"
+            name="username"
+          /><br /><br />
+          <label for="password">Password:-</label> &emsp; &emsp;
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            name="password"
+          /><br /><br />
+          <label for="location">Location:-</label> &emsp; &emsp;
+          <input
+            type="location"
+            id="location"
+            placeholder="location"
+            name="location"
+          /><br /><br />
+          <label for="ph-no">Phone no:-</label> &emsp; &emsp;
+          <input
+            type="phone no"
+            id="phone no"
+            placeholder="phone no"
+            name="phone no"
+            /><br /><br />
+            
+            <!-- <label for="Submit">Submit</label> &emsp; &emsp; -->
+            <!-- <input type="button" name="Submit" id="Submit"  /> -->
+         <button id="Submit">submit</button>
+        </div>
+      </fieldset>
+    </form>
+    <script>
+        var btn=document.getElementById("Submit").addEventListener("click",function(e){
+            e.preventDefault()
+            var a=document.createElement("div")
+            a.setAttribute("id","div")
+
+          const input_user = document.getElementById("full name")
+          const input_gmail=document.getElementById("username")
+          const input_pas=document.getElementById("password")
+          const input_loc=document.getElementById("location")
+          const input_ph=document.getElementById("phone no")
+
+          const user=document.createElement("p")
+          user.innerText=input_user.value
+          const para_cre1=document.createElement("p")
+          para_cre1.innerText=input_gmail.value
+          const pass=document.createElement("h1")
+          pass.innerText=input_pas.value
+          const loc=document.createElement("h2")
+          loc.innerText=input_loc.value
+          const ph=document.createElement("h5")
+          ph.innerText=input_ph.value
+
+          var dtl=document.createElement("button")
+              dtl.innerText="DELETE"
+              
+              dtl.addEventListener("click",function (){
+                  dtl.remove()
+                  a.remove()
+              }) 
+          
+          a.append(user,para_cre1,pass,loc,ph,dtl)
+          document.body.append(a)
+          })
+    
+    </script>
+    <p>
+
+    </p>
+  </body>
+</html>
