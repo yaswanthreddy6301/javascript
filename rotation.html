@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      img {
+        height: 200px;
+        width: 200px;
+        transition: transform 0.5s;
+      }
+      .button-container {
+        margin-top: 30px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <img src="./javascript/jstask/butterfly.jpg" id="image" />
+      </div>
+      <div class="button-container">
+        <button id="id1">45</button>
+        <button id="id2">90</button>
+        <button id="id3">180</button>
+        <button id="id4">270</button>
+        <button id="id5">360</button>
+      </div>
+    </div>
+
+    <script>
+      let image = document.getElementById("image");
+      let id1 = document.getElementById("id1");
+      let id2 = document.getElementById("id2");
+      let id3 = document.getElementById("id3");
+      let id4 = document.getElementById("id4");
+      let id5 = document.getElementById("id5");
+
+      id1.addEventListener("click", function () {
+        image.style.transform = "rotate(45deg)";
+      });
+      id2.addEventListener("click", function () {
+        image.style.transform = "rotate(90deg)";
+      });
+      id3.addEventListener("click", function () {
+        image.style.transform = "rotate(180deg)";
+      });
+      id4.addEventListener("click", function () {
+        image.style.transform = "rotate(270deg)";
+      });
+      id5.addEventListener("click", function () {
+        image.style.transform = "rotate(360deg)";
+      });
+    </script>
+  </body>
+</html>
