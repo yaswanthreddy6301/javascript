@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="Hello">
+    <button id="btn">ADD TASK</button>
+    <script>
+        var btn=document.getElementById("btn").addEventListener("click",function(){
+            var inpt=document.getElementsByTagName("input")
+              inpt[0].value
+              console.log( inpt[0].value)
+              var li=document.createElement("li")
+              li.innerText=inpt[0].value
+              var dtl=document.createElement("button")
+              dtl.innerText="DELETE"
+              
+              dtl.addEventListener("click",function (){
+                  li.remove()
+                  dtl.remove()
+              }) 
+
+                  var dt2=document.createElement("button")
+              dt2.innerText="EDIT"
+              
+              dt2.addEventListener("click",function (){
+                value1=prompt("Enter the text of the edit")
+                li.innerText=value1
+
+                  
+                })
+                document.body.append(li,dtl,dt2)
+                inpt[0].value=""
+        })
+    </script>
+</body>
+</html>
