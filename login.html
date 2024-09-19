@@ -6,35 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-
-
     <form action="">
-        <input type="text" id="user">
-        <input type="text" id="pass">
-
-        <input type="button" value="register" id="register">
-
+        <input type="text" id="user" placeholder="Username" required>
+        <input type="password" id="pass" placeholder="Password" required>
+        <input type="button" value="Register" id="register">
     </form>
+    
     <script>
-      var reg=document.getElementById("register");
-      reg.addEventListener("click",function(e){
-        e.preventDefault();
-        var user=document.getElementById("user").value;
-        var pass=document.getElementById("pass").value;
-        console.log(user , pass)  ; 
-        
-        var obj={
-            user:user,
-            pass:pass
-        }
-        console.log(obj);
-
-        arr.push(obj);
-        localStorage.setItem("register",JSON.stringify(arr))
-
-         var c=confirm("reg success do u want  to go to login page")
-         
-      })  
+      
+        var arr = JSON.parse(localStorage.getItem("register")) || [];
+    
+        var reg = document.getElementById("register");
+        reg.addEventListener("click", function(e) {
+            e.preventDefault();
+            var user = document.getElementById("user").value;
+            var pass = document.getElementById("pass").value;
+    
+            
+            if (user && pass) {
+                console.log(user, pass);
+                
+                var obj = {
+                    user: user,
+                    pass: pass
+                };
+                console.log(obj);
+    
+                arr.push(obj);
+                localStorage.setItem("register", JSON.stringify(arr));
+    
+                var c = confirm("Registration successful! Do you want to go to the login page?");
+                if (c) {
+                   
+                    window.location.href = "login.html";
+                }
+            } else {
+                alert("Please fill in both fields.");
+            }
+        });
+    </script>
+    
     </script>
     
 </body>
