@@ -1,11 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OTP Generation</title>
+        <style>
+                 body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            margin: 0;
+            background-color: #f0f0f0; 
+        }
+        button {
+            width: 150px; 
+            height: 40px; 
+            font-size: 16px;
+            margin: 10px; 
+            cursor: pointer; 
+            background-color: #4CAF50; 
+            color: white;
+            border: none; 
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049; 
+        }
+        #otpInput {
+            width: 200px; 
+            height: 40px; 
+            font-size: 16px; 
+            margin-bottom: 10px; 
+            padding: 5px; 
+            border: 1px solid #1d1b1b; 
+            border-radius: 5px; 
+        }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="otpInput" placeholder="Enter OTP" required>
+        <button id="btn">Generate OTP</button>
+        <button id="btn1">Submit</button>
+        <button id="btn2">Reset</button>
+        <div id="otpResult"></div>
+       
     
+        <script>
+            let generatedOTP = '';
+    
+            document.getElementById("btn").addEventListener("click", function() {
+                generatedOTP = generateOTP();
+                document.getElementById('otpResult').textContent = `Generated OTP: ${generatedOTP}`;
+            });
+    
+            document.getElementById("btn1").addEventListener("click", function() {
+                const userInput = document.getElementById('otpInput').value;
+                if (userInput === generatedOTP) {
+                    alert("Successfully submitted!");
+                } else {
+                    alert("Your OTP is wrong.");
+                }
+                document.getElementById("btn2").addEventListener("click",function(){
+                    document.getElementById("otpInput").value='';
+                    document.getElementById("otpResult'").textContent='';
+                    generateOTP='';
+                })
+                
+                
+            });
+    
+            function generateOTP() {
+                let otp = '';
+                for (let i = 0; i < 4; i++) {  
+                    otp += Math.floor(Math.random() * 10);
+                }
+                return otp;
+            }
+        </script>
+            
 </body>
 </html>
