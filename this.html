@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button name="yash" id="BTN">clickme</button>
+    <script>
+        function hello(name){
+            this.name=name;
+        }
+        hello.prototype.hu="hello";
+        var obj= new hello("hi")
+        obj.hu="hello";
+        console.log(obj.hu);
+
+        class helloclass{
+            constructor(name){
+                this.name=name;
+                this.hi=this.hi.bind(this)
+            }
+            hi=()=>{
+                console.log(`${this.name} is my name`)
+            }
+
+        }
+        var obj= new helloclass("yash")
+        var btn=document.getElementById("BTN")
+        btn.addEventListener('click',obj.hi)
+    </script>
+</body>
+</html>
